@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""This Program is Created for DM Assignment
-"""
+'''This Program is Created for DM Assignment
+'''
 # Suggested Sudoku Problem
 # 5 3 0 0 7 0 0 0 0
 # 6 0 0 1 0 5 0 0 0
@@ -50,13 +50,6 @@ def check_sudoku(A):
   return True
 
 #=====================================================
-# RERUN THIS TO ENTER ANOTHER SUDOKU PROBLEM
-
-print("PLEASE INPUT THE SUDOKU PROBLEM WITH THE GIVEN INSTRUCTIONS! \n"
-      " 1. Seperate each element in a row by spacing, once a row has nine elements PRESS ENTER to switch to the next row. "
-      "\n 2. Enter Zero in place of empty cell.\n")
-
-#=====================================================
 # Taking the puzzle from the user
 
 def enter_sudoku(S):
@@ -75,6 +68,13 @@ def validate_sudoku(A):
    print("The Sudoku was invalid. Please follow the instructions to Enter the Sudoku again:")
    enter_sudoku(A)
    validate_sudoku(A)
+
+#=====================================================
+# DRIVER CODE TO TAKE SUDOKU PUZZLE
+
+print("PLEASE INPUT THE SUDOKU PROBLEM WITH THE GIVEN INSTRUCTIONS! \n"
+      " 1. Seperate each element in a row by spacing, once a row has nine elements PRESS ENTER to switch to the next row. "
+      "\n 2. Enter Zero in place of empty cell.\n")
 
 enter_sudoku(S)
 validate_sudoku(S)
@@ -114,19 +114,26 @@ def solve_sudoku(A):
      for i in range(9):
         for j in range(9):
             if A[i][j] == 0:
-                for n in range(1, 10): #loops through 1-9 values for n and checks if it fits in that certain place
+                #loop from 1 to 9 for n and checks if it fits in that certain place
+                for n in range(1, 10): 
                     if select_number(A, i, j, n):
                         A[i][j]= n
-                        solve_sudoku(A) #Recurssion to Solve for the following elements
-                        A[i][j] = 0     
+                        #Recurssion to Solve for the following elements
+                        solve_sudoku(A) 
                         # If algorithm stops at any point, backtracks the code and takes the next value of n for that step in recurssion.
+                        A[i][j] = 0     
                 return 
-
-     print("\nThe Solved Sudoku is:")
+     
+     #When no element is left equal to zero, the first solution will be printed
+     #then the process will backtrack to the previous element and loop through the remaining values
+     #if no new solution, then the process will follow to element before that one
+     #once, all the possible values are looped through for the 1st zero detected
+     #we will have all our possible solutions.
+     
+     print("One of the Sudoku solution is:") 
      print(A)
-     input("\nPress ENTER to check if other solution exists\n(If there is no output after pressing ENTER then these are the only solutions): ")
 
 
 #=====================================================
-# Calling the final solve_sudoku(S) to run the program
+# Calling the final solve_sudoku(S) to GET THE SOLUTION/S
 solve_sudoku(S)
