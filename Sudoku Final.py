@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 '''This Program is Created for DM Assignment
 '''
 
@@ -6,7 +6,7 @@
 import numpy as np 
 # Skeletal Sudoku Matrix
 S = np.zeros((9,9), dtype=np.int32)
-print(S)
+#print(S)
 #=====================================================
 # To check if the entered sudoku problem is correct
 
@@ -63,8 +63,9 @@ def validate_sudoku(A):
 # DRIVER CODE TO TAKE SUDOKU PUZZLE
 
 print("PLEASE INPUT THE SUDOKU PROBLEM WITH THE GIVEN INSTRUCTIONS! \n"
-      " 1. Seperate each element in a row by spacing, once a row has nine elements PRESS ENTER to switch to the next row. "
-      "\n 2. Enter Zero in place of empty cell.\n")
+       "1. Seperate each element in a row by spacing, once a row has nine elements PRESS ENTER to switch to the next row. 
+       "\n 2. Enter Zero in place of empty cell.\n"
+       "3. Please mind the general sudoku rules.\n")
 
 enter_sudoku(S)
 validate_sudoku(S)
