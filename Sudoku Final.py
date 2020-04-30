@@ -1,16 +1,6 @@
 # -*- coding: utf-8 -*-
 '''This Program is Created for DM Assignment
 '''
-# Suggested Sudoku Problem
-# 5 3 0 0 7 0 0 0 0
-# 6 0 0 1 0 5 0 0 0
-# 0 9 8 0 0 0 0 6 0
-# 8 0 0 0 6 0 0 0 3
-# 4 0 0 8 0 3 0 0 1
-# 7 0 0 0 2 0 0 0 6
-# 0 6 0 0 0 0 2 8 0
-# 0 0 0 4 1 9 0 0 5
-# 0 0 0 0 8 0 0 0 0
 
 
 import numpy as np 
@@ -137,3 +127,15 @@ def solve_sudoku(A):
 #=====================================================
 # Calling the final solve_sudoku(S) to GET THE SOLUTION/S
 solve_sudoku(S)
+#=====================================================
+
+# Suggested Sudoku Problem
+# 5 3 0 0 7 0 0 0 0
+# 6 0 0 1 0 5 0 0 0
+# 0 9 8 0 0 0 0 6 0
+# 8 0 0 0 6 0 0 0 3
+# 4 0 0 8 0 3 0 0 1
+# 7 0 0 0 2 0 0 0 6
+# 0 6 0 0 0 0 2 8 0
+# 0 0 0 4 1 9 0 0 5
+# 0 0 0 0 8 0 0 0 0
